@@ -50,3 +50,16 @@ Desenvolver uma aplicação web simples (Single Page Application) para centraliz
     4.	CANCELADO (Item não é mais necessário).
 •	**RN02 - Imutabilidade Histórica**: Não deve ser possível excluir fisicamente (delete do banco) registros de compras "Concluídas", para garantir histórico futuro.
 •	**RN03 - Definição de Atraso**: Uma solicitação é considerada "Atrasada/Esquecida" se estiver com status PENDENTE por mais de 5 dias corridos sem alteração.
+
+## 7. Definição de Rotas da API (Endpoints)
+
+A API seguirá o padrão RESTful, utilizando JSON para comunicação.
+
+| Método | Rota | Descrição | Requisito Relacionado |
+
+| **GET** | `/api/requests` | Lista todas as solicitações. Suporta filtros (status, data). | RF002, RF006 |
+| **GET** | `/api/requests/{id}` | Obtém detalhes de uma solicitação específica. | - |
+| **POST** | `/api/requests` | Cria uma nova solicitação de compra. | RF001 |
+| **PUT** | `/api/requests/{id}` | Atualiza os dados de uma solicitação (Item, Qtd, Link). | RF004 |
+| **PATCH** | `/api/requests/{id}/status` | Atualiza apenas o status da solicitação (ex: Pendente -> Aguardando Entrega). | RF003, RF005 |
+| **DELETE** | `/api/requests/{id}` | Cancela/Remove uma solicitação (Soft Delete conforme RN02). | RF005, RN02 |

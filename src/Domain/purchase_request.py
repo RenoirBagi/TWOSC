@@ -1,4 +1,4 @@
-class Request:
+class PurchaseRequest:
     def __init__(self,id,item,requester,quantity,priority,request_date,delivery_date,status,observation,reference_link):
         self.id = id
         self.item = item
