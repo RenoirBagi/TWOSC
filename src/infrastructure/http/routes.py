@@ -1,4 +1,4 @@
-from src.application.controller.request_controller import 
+from src.application.service.service_request import ServicePurchaseRequest
 
 def init_routes(app):
     @app.route('/')

@@ -1,17 +1,20 @@
 from src.infrastructure.model.model_purchase_request import ModelPurchaseRequest
-from src.domain.purchase_request import PurchaseRequest
+from src.domain.purchase_request import PurchaseRequest, Status
 
 class ServicePurchaseRequest:
-    def create_purchase_request(purchase_request_data):
+    def __init__ (self, repository):
+        self.repository = repository
 
+    def create_purchase_request(self,item,requester,quantity,priority,request_date,observation,reference_link):
         new_purchase_request = PurchaseRequest(
-            item = purchase_request_data['item'],
-            requester = purchase_request_data['requester'],
-            quantity = purchase_request_data['quantity']
-            priority = purchase_request_data['priority']
-            request_date = purchase_request_data['request_date']
-            delivery_date = purchase_request_data['delivery_date']
-            status = purchase_request_data['status']
-            observation = purchase_request_data['observation']
-            reference_link = purchase_request_data['reference_link']
-        )
+            item=item,
+            requester=requester,
+            quantity=quantity,
+            priority=priority,
+            status=Status.PENDENTE,
+            request_date=request_date,
+            observation=observation,
+            reference_link=reference_link,
+            )
+
+        self.repository.save(new_purchase_request)

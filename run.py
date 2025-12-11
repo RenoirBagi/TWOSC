@@ -1,5 +1,5 @@
 from flask import Flask
-from src.Infrastructure.Model.Http.routes import init_routes
+from src.infrastructure.http.routes import init_routes
 
 #Aqui é criado a instância do app com flask e inicia as rotas
 
