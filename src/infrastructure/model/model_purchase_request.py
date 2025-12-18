@@ -1,4 +1,4 @@
-class ModelPurchaseRequest:
+'''class ModelPurchaseRequest:
     __tablename__ = 'requests'
     id = Column(Integer, primary_key=True, autoincrement=True)
     item = Column(String(255), nullable=False)
@@ -24,3 +24,4 @@ class ModelPurchaseRequest:
             'observation': self.observation,
             'reference_link': self.reference_link
         }
+'''

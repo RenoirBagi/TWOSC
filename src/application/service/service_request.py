@@ -1,4 +1,3 @@
-from src.infrastructure.model.model_purchase_request import ModelPurchaseRequest
 from src.domain.purchase_request import PurchaseRequest, Status
 
 class ServicePurchaseRequest:

@@ -10,3 +10,8 @@ class inMemoryPurchaseResquestRepository(PurchaseRequestRepositoryInterface):
 
         self.db[new_id] = purchase_request
         
+    def get_request_by_id(self, id):
+        request_by_id = self.db.get(id)
+        return request_by_id
+        
+    
